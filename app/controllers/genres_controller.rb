@@ -1,7 +1,6 @@
 class GenresController < ApplicationController
-    class GenresController < ApplicationController
         def index
-            @genres = Genre.all
+            @genre = Genre.all
         end
     
         def show
@@ -30,8 +29,7 @@ class GenresController < ApplicationController
     
         private
     
-            def genre_params(*args)
-                params.require(:genre).permit(*args)
+            def genre_params
+                params.require(:genre).permit!
             end
-    end
 end
